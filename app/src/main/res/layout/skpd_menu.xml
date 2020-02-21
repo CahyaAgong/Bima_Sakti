@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:percent="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Skpd_menu">
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_height="200dp"
+            percent:layout_widthPercent="100%"
+            android:id="@+id/banner_atas">
+            <!--<include layout="@layout/banner_main" />-->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager2"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/banner_atas"
+            android:id="@+id/marqueeText"
+            android:background="@color/birutua"
+            percent:layout_widthPercent="100%"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/running_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:focusable="auto"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="SELAMAT HARI JADI KABUPATEN SUKABUMI YANG KE 74 - SUKABUMI LEBIH BAIK "
+                android:textSize="15dp"
+                android:padding="4dp"
+                android:textColor="@color/oren"
+                android:textStyle="bold|italic"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu1"
+            android:layout_below="@id/marqueeText"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.percentlayout.widget.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_info"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="22dp"
+                    android:onClick="sielok"
+                    android:elevation="28dp"
+                    android:layout_height="wrap_content"
+                    percent:layout_widthPercent="25%">
+                    <LinearLayout
+                        android:padding="13.5dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/icon_sielok"/>
+                        <TextView
+                            android:textSize="9dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SIELOK "/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_rilis"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="siap"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@id/card_info"
+                    android:elevation="18dp"
+                    app:cardCornerRadius="22dp"
+                    percent:layout_widthPercent="25%">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:padding="13.5dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_siap" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="SIAP"
+                            android:textSize="9dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:background="@drawable/back_menu"
+                    android:id="@+id/card_diskusi"
+                    android:layout_marginStart="3dp"
+                    android:layout_toRightOf="@id/card_rilis"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="simpeg"
+                    app:cardCornerRadius="22dp"
+                    android:elevation="28dp"
+                    percent:layout_widthPercent="25%"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="13.5dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_simpeg"/>
+                        <TextView
+                            android:textSize="9dp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SIMPEG "/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:background="@drawable/back_menu"
+                    android:id="@+id/card_rank"
+                    android:onClick="simencrang"
+                    android:layout_toRightOf="@id/card_diskusi"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="22dp"
+                    android:elevation="28dp"
+                    percent:layout_widthPercent="25%"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:padding="13.5dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_simencrang"/>
+                        <TextView
+                            android:textSize="9dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MENCRANG"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.percentlayout.widget.PercentRelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu2"
+            android:layout_below="@id/menu1"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.percentlayout.widget.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_21"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="22dp"
+                    android:onClick="rkpd"
+                    android:elevation="28dp"
+                    android:layout_height="wrap_content"
+                    percent:layout_widthPercent="25%">
+                    <LinearLayout
+                        android:padding="13.5dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_ajuan"/>
+                        <TextView
+                            android:textSize="9dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RKPD "/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_22"
+                    android:layout_toRightOf="@id/card_21"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="22dp"
+                    android:onClick="simpol"
+                    android:elevation="28dp"
+                    android:layout_height="wrap_content"
+                    percent:layout_widthPercent="25%">
+                    <LinearLayout
+                        android:padding="13.5dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/pol_pp"/>
+                        <TextView
+                            android:textSize="9dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SIM Pol PP"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_23"
+                    android:layout_toRightOf="@id/card_22"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="22dp"
+                    android:elevation="28dp"
+                    android:onClick="elog_dinkes"
+                    android:layout_height="wrap_content"
+                    percent:layout_widthPercent="25%">
+                    <LinearLayout
+                        android:padding="13.5dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_log_dinkes"/>
+                        <TextView
+                            android:textSize="9dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ELog Dinkes"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.percentlayout.widget.PercentRelativeLayout>
+
+        </LinearLayout>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+</ScrollView>

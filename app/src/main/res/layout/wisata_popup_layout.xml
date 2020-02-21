@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    xmlns:percent="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_below="@id/tv_nama_wisata_popup"
+            android:id="@+id/foto_wisata"
+            android:layout_centerHorizontal="true"
+            percent:layout_widthPercent="90%"
+            percent:layout_heightPercent="40%"
+            />
+
+        <TextView
+            android:id="@+id/tv_nama_wisata_popup"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="15dp"
+            android:text="Nama Kota"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_below="@id/foto_wisata"
+            android:id="@+id/tv_alamat_wisata_popup"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="Nama Kota"
+            android:textColor="#000"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+       <LinearLayout
+           android:layout_centerHorizontal="true"
+           android:layout_below="@id/tv_alamat_wisata_popup"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <Button
+               android:id="@+id/tutup_popup"
+               android:textColor="#fff"
+               android:background="@drawable/bg_ui"
+               android:text="Tutup"
+               android:layout_marginEnd="20dp"
+               android:layout_below="@id/tv_alamat_wisata_popup"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               />
+
+           <Button
+               android:drawableStart="@drawable/map_marker_point"
+               android:textSize="9dp"
+               android:padding="12dp"
+               android:id="@+id/maps_wisata"
+               android:textColor="#fff"
+               android:background="@drawable/bg_ui"
+               android:text="Lihat di Maps"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               />
+
+       </LinearLayout>
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_nama_kabupaten_kec"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="15dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_below="@id/tv_nama_kecamatan_kec"-->
+            <!--android:layout_toRightOf="@id/tv_nama_provinsi_kec"-->
+            <!--android:text="Kode Kota"-->
+            <!--android:textSize="15dp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_nama_provinsi_kec"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_below="@id/tv_nama_kecamatan_kec"-->
+            <!--android:text="Nama Tempat"-->
+            <!--android:textSize="14dp" />-->
+
+        <TextView
+            android:id="@+id/tv_id_kecamatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="80dp"
+            android:visibility="invisible"
+            android:text="id kota" />
+
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</androidx.cardview.widget.CardView>

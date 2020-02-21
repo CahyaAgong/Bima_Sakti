@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:percent="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".e_ambulance.Ambulance_locate">
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/lay_atas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/tulisan_atas"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            percent:layout_widthPercent="100%"
+            >
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:text="E-Ambulan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/set"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Ajukan Proses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <androidx.percentlayout.widget.PercentRelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txt_tanggal_waktu"
+                    android:layout_marginEnd="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="30dp"
+                    android:textColor="#000"
+                    android:textSize="12dp"
+                    android:text="Tanggal Sekarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </androidx.percentlayout.widget.PercentRelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/tulisan_atas"
+            android:id="@+id/lay_map"
+            android:orientation="vertical"
+            percent:layout_heightPercent="45%"
+            percent:layout_widthPercent="100%">
+            <fragment
+                android:id="@+id/map_place"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                />
+        </LinearLayout>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <ScrollView
+        android:layout_below="@id/lay_atas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <androidx.percentlayout.widget.PercentRelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <TextView
+               android:layout_centerHorizontal="true"
+               android:layout_below="@id/lay_map"
+               android:id="@+id/getAdress"
+               android:visibility="gone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+           <androidx.percentlayout.widget.PercentRelativeLayout
+               android:id="@+id/profile"
+               android:background="@color/colorPrimary"
+               android:orientation="horizontal"
+               android:layout_below="@id/lay_map"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <de.hdodenhof.circleimageview.CircleImageView
+                   android:id="@+id/gambar_driver"
+                   android:layout_marginTop="15dp"
+                   android:layout_marginStart="15dp"
+                   android:layout_marginEnd="1dp"
+                   android:layout_marginBottom="10dp"
+                   android:layout_width="60dp"
+                   android:layout_height="60dp"
+                   app:civ_border_color="#FFB300"
+                   app:civ_border_width="1dp"
+                   android:src="@drawable/ambul"/>
+               <LinearLayout
+                   android:id="@+id/bio_driver"
+                   android:layout_toRightOf="@id/gambar_driver"
+                   android:layout_marginStart="10dp"
+                   android:orientation="vertical"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:id="@+id/txt_nm_driver"
+                       android:layout_marginTop="20dp"
+                       android:textStyle="bold"
+                       android:text="-"
+                       android:textColor="#fff"
+                       android:textSize="20dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" />
+                   <TextView
+                   android:id="@+id/txt_instansi_driver"
+                   android:textSize="12dp"
+                   android:textColor="#fff"
+                   android:text="-"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+
+                   <TextView
+                       android:id="@+id/txt_plat_driver"
+                       android:textSize="12dp"
+                       android:textColor="#fff"
+                       android:paddingBottom="10dp"
+                       android:text="-"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" />
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_alignParentRight="true"
+                   android:background="#F58634"
+                   android:gravity="center"
+                   android:orientation="vertical"
+                   android:layout_width="wrap_content"
+                   android:padding="10dp"
+                   android:layout_height="match_parent">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Jarak"
+                       android:textColor="#fff"/>
+                   <TextView
+                       android:layout_marginTop="10dp"
+                       android:id="@+id/txt_jarak_detail"
+                       android:textSize="20dp"
+                       android:textStyle="bold"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="0KM"
+                       android:textColor="#fff"/>
+               </LinearLayout>
+           </androidx.percentlayout.widget.PercentRelativeLayout>
+
+           <TextView
+               android:id="@+id/detail_peng"
+               android:layout_marginTop="5dp"
+               android:layout_marginStart="15dp"
+               android:textColor="#000"
+               android:visibility="gone"
+               android:textSize="20dp"
+               android:textStyle="bold"
+               android:text="Detail Penjemputan"
+               android:layout_below="@id/profile"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               />
+
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_marginTop="10dp"
+               android:layout_marginEnd="15dp"
+               android:layout_marginStart="15dp"
+               android:id="@+id/locate"
+               android:layout_toRightOf="@id/icon_locate"
+               android:layout_marginBottom="20dp"
+               android:layout_below="@id/detail_peng"
+               android:layout_height="wrap_content"
+               android:layout_width="match_parent">
+
+               <LinearLayout
+                   android:orientation="horizontal"
+                   android:layout_width="wrap_content"
+                   android:layout_marginBottom="5dp"
+                   android:layout_height="wrap_content">
+                   <ImageView
+                       android:layout_width="30dp"
+                       android:src="@drawable/ambulans"
+                       android:layout_marginEnd="17dp"
+                       android:layout_gravity="center_vertical"
+                       android:layout_height="30dp"/>
+
+                   <LinearLayout
+                       android:orientation="vertical"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <TextView
+                           android:text="Lokasi Ambulan"
+                           android:textColor="#000"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"/>
+                       <TextView
+                           android:id="@+id/lok_driver"
+                           android:textSize="13dp"
+                           android:textColor="#000"
+                           android:text="-"
+                           android:layout_marginTop="5dp"
+                           android:textStyle="bold"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"/>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:visibility="gone"
+                   android:layout_marginBottom="5dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+                   <ImageView
+                       android:layout_width="30dp"
+                       android:src="@drawable/icontitik"
+                       android:layout_gravity="center"
+                       android:layout_height="30dp"/>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <ImageView
+                       android:layout_marginEnd="17dp"
+                       android:layout_width="30dp"
+                       android:src="@drawable/iconuser"
+                       android:layout_gravity="center_vertical"
+                       android:layout_height="30dp"/>
+                   <LinearLayout
+                       android:orientation="vertical"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <TextView
+                           android:text="Lokasi Pemesan"
+                           android:textColor="#000"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"/>
+                       <TextView
+                           android:id="@+id/lok_pemesan"
+                           android:textSize="13dp"
+                           android:textColor="#000"
+                           android:layout_marginTop="5dp"
+                           android:text="-"
+                           android:layout_width="wrap_content"
+                           android:textStyle="bold"
+                           android:layout_height="wrap_content"/>
+                   </LinearLayout>
+               </LinearLayout>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:visibility="gone"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp"
+               android:layout_marginEnd="15dp"
+               android:layout_marginStart="15dp"
+               android:id="@+id/icon_locate"
+               android:layout_marginBottom="20dp"
+               android:layout_below="@id/detail_peng"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content">
+
+               <ImageView
+                   android:layout_marginTop="10dp"
+                   android:layout_width="wrap_content"
+                   android:src="@drawable/amb"
+                   android:layout_gravity="center"
+                   android:layout_height="wrap_content"/>
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_marginTop="10dp"
+                   android:src="@drawable/more"
+                   android:layout_gravity="center"
+                   android:layout_height="wrap_content"/>
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_marginTop="15dp"
+                   android:src="@drawable/jemput"
+                   android:layout_gravity="center"
+                   android:layout_height="wrap_content"/>
+           </LinearLayout>
+
+           <View
+               android:layout_below="@id/locate"
+               android:layout_width="match_parent"
+               android:layout_height="9dp"
+               android:background="#E8E8E8"/>
+
+           <Button
+               android:id="@+id/get_order_am"
+               android:layout_marginEnd="15dp"
+               android:layout_marginStart="15dp"
+               android:text="PANGGIL AMBULAN"
+               android:textColor="@color/putih"
+               android:textStyle="bold"
+               android:textSize="13dp"
+               android:background="@drawable/bg_btn_primary"
+               android:padding="13dp"
+               android:layout_marginTop="25dp"
+               android:layout_below="@id/locate"
+               android:layout_height="45sp"
+               android:layout_width="match_parent"/>
+           <Button
+               android:id="@+id/tunggu_ambulan"
+               android:layout_marginEnd="15dp"
+               android:layout_marginStart="15dp"
+               android:text="MENUNGGU AMBULAN"
+               android:layout_marginBottom="30dp"
+               android:textColor="#fff"
+               android:textStyle="bold"
+               android:textSize="13dp"
+               android:visibility="invisible"
+               android:background="@drawable/bg_btn_second"
+               android:padding="13dp"
+               android:layout_marginTop="10dp"
+               android:layout_below="@id/get_order_am"
+               android:layout_height="45sp"
+               android:layout_width="match_parent"/>
+       </androidx.percentlayout.widget.PercentRelativeLayout>
+    </ScrollView>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

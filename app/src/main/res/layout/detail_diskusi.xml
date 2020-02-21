@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:percent="http://schemas.android.com/apk/res-auto"
+    tools:context=".tablayout2.Detail_diskusi">
+
+    <ImageView
+        android:id="@+id/gambar_diskusi"
+        android:src="@drawable/kartun"
+        percent:layout_widthPercent="100%"
+        percent:layout_heightPercent="35%"
+        />
+
+    <RelativeLayout
+        android:id="@+id/header_detail"
+        percent:layout_widthPercent="100%"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gambar_diskusi"
+        >
+        <TextView
+            android:id="@+id/txt_detail_kategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategori"
+            android:textSize="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:padding="9dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/txt_detail_tanggal"
+            android:layout_marginTop="25dp"
+            android:text="12/10/2019"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/txt_detail_kategori"
+            android:text="JUDUL"
+            android:id="@+id/txt_detail_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:textSize="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:drawablePadding="5dp"
+            android:layout_below="@id/txt_detail_judul"
+            android:text="Creator"
+            android:id="@+id/txt_detail_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_hapus_diskusi"
+            android:visibility="invisible"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="45dp"
+            android:background="@drawable/garbage_64"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/txt_detail_judul"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@id/header_detail"
+        android:id="@+id/detail_scroll"
+        android:layout_height="wrap_content"
+        percent:layout_widthPercent="100%"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="13dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:text="creator"
+                android:textColor="#000"
+                android:id="@+id/txt_detail_deskripsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_comment"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:text="Tulis Komentar"
+                android:background="@color/colorPrimary"
+                android:layout_below="@id/txt_detail_deskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

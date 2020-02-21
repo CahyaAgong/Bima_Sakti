@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/tv_nama_kecamatan_kec"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Nama Kota"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_nama_kabupaten_kec"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="15dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_below="@id/tv_nama_kecamatan_kec"-->
+            <!--android:layout_toRightOf="@id/tv_nama_provinsi_kec"-->
+            <!--android:text="Kode Kota"-->
+            <!--android:textSize="15dp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_nama_provinsi_kec"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_below="@id/tv_nama_kecamatan_kec"-->
+            <!--android:text="Nama Tempat"-->
+            <!--android:textSize="14dp" />-->
+
+        <TextView
+            android:id="@+id/tv_id_kecamatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="80dp"
+            android:visibility="invisible"
+            android:text="id kota" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

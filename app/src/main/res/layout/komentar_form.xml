@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:percent="http://schemas.android.com/apk/res-auto"
+    tools:context=".tablayout2.Komentar_form">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_komentar"
+        percent:layout_widthPercent="100%"
+        percent:layout_heightPercent="90%"
+        >
+    </androidx.recyclerview.widget.RecyclerView>
+    <TextView
+        android:id="@+id/stats_null"
+        android:visibility="gone"
+        android:text="No Comment Available!"
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <RelativeLayout
+        android:layout_below="@id/rec_komentar"
+        percent:layout_widthPercent="100%"
+        percent:layout_heightPercent="10%"
+        android:background="#F6F6F6"
+        >
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/comment_text"
+                android:padding="10dp"
+                android:hint="write a comment"
+                android:maxLength="100"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rounded_edittext"
+                percent:layout_widthPercent="85%"
+                android:layout_height="40dp" />
+            <Button
+                android:id="@+id/send_comment"
+                android:layout_toRightOf="@+id/comment_text"
+                android:background="@drawable/send_ic_64"
+                android:layout_marginStart="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+    </RelativeLayout>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "382758653819",
+    "firebase_url": "https://fcm-bimasakti.firebaseio.com",
+    "project_id": "fcm-bimasakti",
+    "storage_bucket": "fcm-bimasakti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382758653819:android:435c8333ece2005daab7de",
+        "android_client_info": {
+          "package_name": "com.bimasakti.diskominfosan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382758653819-5mh0a1r5ui3gjlmn24bd186qtp4b1hmk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bimasakti.diskominfosan",
+            "certificate_hash": "e8c28a01a66800fa4dba65bc1c1fcfc976856595"
+          }
+        },
+        {
+          "client_id": "382758653819-81n5d8upqe218ig9spmde0j70d0jk7bm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUCF6ypwPhT6WaVKqaztd8ezZ1KDkQJIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382758653819-81n5d8upqe218ig9spmde0j70d0jk7bm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/post_diskusi_rec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"></androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/posting_diskusi"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentRight="true"
+        android:layout_width="250dp"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_height="250dp" />
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginStart="0dp"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:layout_marginEnd="0dp">-->
+
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+            <!--<EditText-->
+                <!--android:id="@+id/et_judul_diskusi"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginStart="16dp"-->
+                <!--android:layout_marginEnd="16dp"-->
+                <!--android:hint="Judul Diskusi"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+            <!--<EditText-->
+                <!--android:id="@+id/et_isi_diskusi"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginStart="16dp"-->
+                <!--android:layout_marginEnd="16dp"-->
+                <!--android:hint="Apa yang akan anda diskusikan?"-->
+                <!--android:inputType="textMultiLine"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+            <!--<Button-->
+                <!--android:textColor="#fff"-->
+                <!--android:background="@color/colorPrimary"-->
+                <!--android:layout_marginEnd="50dp"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:layout_marginTop="90dp"-->
+                <!--android:id="@+id/kirim_diskusi"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Kirim"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+
+    <!--</ScrollView>-->
+</RelativeLayout>

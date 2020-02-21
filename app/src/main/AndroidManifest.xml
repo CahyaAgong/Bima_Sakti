@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.bimasakti.diskominfosan">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission-sdk-23 android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_laun"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_laun"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".e_damkar.damkar_locate"
+            android:parentActivityName=".layanan_menu"
+            android:label="E-Damkar" ></activity>
+        <activity
+            android:name=".User.Edit_profil.Profile_Screen"
+            android:label="Profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".User.Edit_profil.Edit_password"
+            android:label="Edit Password" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+
+        <service
+            android:name=".fcm.NotificationService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".User.Edit_profil.Update_address"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".tablayout2.Komentar_form"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Splash"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tablayout2.Detail_diskusi"
+            android:label=" Detail Diskusi"
+            android:parentActivityName=".tablayout2.form_diskusi" />
+        <activity
+            android:name=".layanan_webview.Bnn_wv"
+            android:label="E-BNN"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".webview_skpd.ELog_dinkes"
+            android:label="Elog Dinkes"
+            android:parentActivityName=".Skpd_menu" />
+        <activity
+            android:name=".webview_skpd.Sim_pol_pp"
+            android:label="SIM POL PP"
+            android:parentActivityName=".Skpd_menu" />
+        <activity android:name=".layanan_webview.rs.webview_rs.Rsud_sekarwangi" />
+        <activity android:name=".wisataku.Wisataku_act" />
+        <activity
+            android:name=".webview_skpd.Rkpd_webview"
+            android:label="RKPD"
+            android:parentActivityName=".Skpd_menu" />
+        <activity
+            android:name=".Check_pbb"
+            android:label="Check PBB"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".User.Edit_profil.Update_profile_act" />
+        <activity android:name=".kecamatan_dan_keluarahan.Kelurahan_desa_act" />
+        <activity android:name=".kecamatan_dan_keluarahan.Kecamatan_act">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".Login_act"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Register_act"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".layanan_webview.IPKB_webview"
+            android:label="IPKB Pajak"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Cart_kuning"
+            android:label="Cart Kuning"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.E_lapor_webview"
+            android:label="E-Lapor"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".layanan_webview.Dpmptsp_webview"
+            android:label="DPMPTSP"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Spt_pajak_wv"
+            android:label="SPT Pajak"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Rcl_radio"
+            android:label="RCL Radio"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.E_ktp"
+            android:label="E-KTP"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Ppid_webview"
+            android:label="PPID"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Jdih_kabsi_wv"
+            android:label="JDIH Kabsi"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Hallo_praja_wv"
+            android:label="Hallo Praja"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Suhunan_webview"
+            android:label="Suhunan"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Lpse_webview"
+            android:label="LPSE Kabsi"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Kami_tv"
+            android:label="Kami TV"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Shohib_webview"
+            android:label="Shohib"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Amdal_webview"
+            android:label="Amdal"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Bpjs_kerja"
+            android:label="BPJS Kerja"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Bpjs_kes"
+            android:label="BPJS Kesehatan"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.e_ajuan.E_ajuan"
+            android:label="E-Ajuan"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".e_ambulance.Ambulance_locate"
+            android:label="E-Ambulan"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".E_ambulance"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.rs.Rumah_sakit"
+            android:label="Rumah Sakit"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".layanan_webview.Umkm_webview"
+            android:label="UMKM"
+            android:parentActivityName=".layanan_menu" />
+        <activity
+            android:name=".webview_skpd.Simencrang_webview"
+            android:label="SIMENCRANG"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".webview_skpd.Simpeg_webview"
+            android:label="SIMPEG"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".webview_skpd.Siap_webview"
+            android:label="SIAP"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".webview_skpd.Sielok_webview"
+            android:label="SIELOK"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Skpd_menu"
+            android:label="E-SKPD"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Webview"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".tablayout2.form_diskusi"
+            android:label="Diskusi Publik"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".layanan_menu"
+            android:label="Layanan"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

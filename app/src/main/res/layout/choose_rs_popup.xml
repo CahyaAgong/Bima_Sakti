@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:padding="22dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/doctor_ic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/doctor"
+        android:layout_marginBottom="25dp"
+        />
+
+    <LinearLayout
+        android:layout_below="@id/doctor_ic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/info_kami_btn"
+            android:padding="12dp"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_ui"
+            android:layout_marginEnd="20dp"
+            android:text="Info Kami"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/hub_kami_btn"
+            android:padding="12dp"
+            android:textSize="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_ui"
+            android:text="Hubungi Kami"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

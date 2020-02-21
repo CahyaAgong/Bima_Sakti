@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Bima Sakti</string>
+    <string-array name="german_familienname">
+        <item>Choose Your Option</item>
+        <item>Irigasi</item>
+        <item>Jalan Desa</item>
+        <item>Jalan Gang</item>
+        <item>MCK</item>
+        <item>Jembatan</item>
+        <item>Rabat Beton</item>
+        <item>Rumah Tidak Layak Huni</item>
+        <item>Tempat Pembuangan Sampah</item>
+        <item>Lain-lain</item>
+    </string-array>
+    <string name="plashscreen">Bank Informasi Masyarakat Kabupaten Sukabumi Aktual dan Terintegrasi</string>
+    <string name="app_mulai">Mulai Sekarang</string>
+    <string name="map_key" translatable="false">AIzaSyBtEZyYZbzE_gLJl-_qp34VGjoyDiwROl0</string>
+    <string name="map_key_damkar" translatable="false">AIzaSyDCGoXPIg2gaAiu6tNxOlECsVqsx3bcEkM</string>
+</resources>
+
+
