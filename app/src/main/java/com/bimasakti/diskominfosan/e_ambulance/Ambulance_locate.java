@@ -26,6 +26,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -144,6 +146,7 @@ public class Ambulance_locate extends AppCompatActivity implements OnMapReadyCal
         jarak_detail = findViewById(R.id.txt_jarak_detail);
         foto_driver = findViewById(R.id.gambar_driver);
 
+
         aa = (TextView) findViewById(R.id.lok_driver);
         ba = (TextView)findViewById(R.id.lok_pemesan);
         ca = (TextView)findViewById(R.id.txt_nm_driver);
@@ -163,133 +166,139 @@ public class Ambulance_locate extends AppCompatActivity implements OnMapReadyCal
         get_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Mendapatkan Instance dari Database
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                final DatabaseReference getReference;
+//                if (){
+//
+//                }else{
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    final DatabaseReference getReference;
 
-                String orderer = user.getNama_lengkap();
-                String driver = "";
-                String no_orderer = user.getNohp();
-                String no_driver = "";
-                String lokal = addressget.getText().toString();
-                String lokhir = "";
-                final String jarak = datee;
-                String stats = "1";
-                String plat = "1";
-                String inst = "1";
+                    String orderer = user.getNama_lengkap();
+                    String driver = "";
+                    String no_orderer = user.getNohp();
+                    String no_driver = "";
+                    String lokal = addressget.getText().toString();
+                    String lokhir = "";
+                    final String jarak = datee;
+                    String stats = "1";
+                    String plat = "1";
+                    String inst = "1";
+                    double lat = 1.1;
+                    double lng = 1.1;
+                    String tipe = "1";
 
-                String id = Integer.toString(user.getId());
-                getReference = database.getReference(); // Mendapatkan Referensi dari Database
-                Keys = getReference.push().getKey();
-                getReference.child("Order_Ambulance").child(id).child(Keys)
-                        .setValue(new data_order(orderer, driver, no_driver, no_orderer, lokal, lokhir, jarak, stats, plat, inst))
-                        .addOnSuccessListener(Ambulance_locate.this, new OnSuccessListener() {
-                            @Override
-                            public void onSuccess(Object o) {
-                                //Peristiwa ini terjadi saat user berhasil menyimpan datanya kedalam Database
-                                /* Buat pesanan */
-                                sendAmbulanNotif();
-                                final CountDownTimer c = new CountDownTimer(20000, 1000){
-                                    public void onTick(long millisUntilFinished){
-                                        counter++;
-                                    }
-                                    public  void onFinish(){
-                                        onDeleteData();
-                                        hidepDialog();
-                                        Toast.makeText(Ambulance_locate.this, "Tidak Ada Driver Saat Ini!", Toast.LENGTH_LONG).show();
-                                    }
-                                }.start();
+                    String id = Integer.toString(user.getId());
+                    getReference = database.getReference(); // Mendapatkan Referensi dari Database
+                    Keys = getReference.push().getKey();
+                    getReference.child("Order_Ambulance").child(id).child(Keys)
+                            .setValue(new data_order(orderer, driver, no_driver, no_orderer, lokal, lokhir, jarak, stats, plat, inst))
+                            .addOnSuccessListener(Ambulance_locate.this, new OnSuccessListener() {
+                                @Override
+                                public void onSuccess(Object o) {
+                                    //Peristiwa ini terjadi saat user berhasil menyimpan datanya kedalam Database
+                                    /* Buat pesanan */
+                                    sendAmbulanNotif();
+                                    final CountDownTimer c = new CountDownTimer(20000, 1000){
+                                        public void onTick(long millisUntilFinished){
+                                            counter++;
+                                        }
+                                        public  void onFinish(){
+                                            onDeleteData();
+                                            hidepDialog();
+                                            Toast.makeText(Ambulance_locate.this, "Tidak Ada Driver Saat Ini!", Toast.LENGTH_LONG).show();
+                                        }
+                                    }.start();
 
-                                /* pesanan diterima */
-                                final String id = Integer.toString(user.getId());
-                                getReference.child("Order_Ambulance").child(id).orderByChild("status").equalTo("2")
-                                        .addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                                if(dataSnapshot.exists()) {
-                                                    ActionBar menu = getSupportActionBar();
-                                                    menu.setDisplayShowHomeEnabled(false);
-                                                    menu.setDisplayHomeAsUpEnabled(false);
+                                    /* pesanan diterima */
+                                    final String id = Integer.toString(user.getId());
+                                    getReference.child("Order_Ambulance").child(id).orderByChild("status").equalTo("2")
+                                            .addValueEventListener(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                                    if(dataSnapshot.exists()) {
+                                                        ActionBar menu = getSupportActionBar();
+                                                        menu.setDisplayShowHomeEnabled(false);
+                                                        menu.setDisplayHomeAsUpEnabled(false);
 
-                                                    c.cancel();
-                                                    hidepDialog();
-                                                    GetData();
-                                                    get_order.setVisibility(View.INVISIBLE);
-                                                    tunggu.setVisibility(View.VISIBLE);
+                                                        c.cancel();
+                                                        hidepDialog();
+                                                        GetData();
+                                                        get_order.setVisibility(View.INVISIBLE);
+                                                        tunggu.setVisibility(View.VISIBLE);
 
+                                                    }
                                                 }
-                                            }
 
-                                            @Override
-                                            public void onCancelled(DatabaseError databaseError) {
+                                                @Override
+                                                public void onCancelled(DatabaseError databaseError) {
                                               /*
                                                 Kode ini akan dijalankan ketika ada error dan
                                                 pengambilan data error tersebut lalu memprint error nya
                                                 ke LogCat
                                                */
-                                                Toast.makeText(getApplicationContext(),"Data Gagal Dimuat", Toast.LENGTH_LONG).show();
-                                                Log.e("MyListActivity", databaseError.getDetails()+" "+databaseError.getMessage());
-                                            }
-                                        });
+                                                    Toast.makeText(getApplicationContext(),"Data Gagal Dimuat", Toast.LENGTH_LONG).show();
+                                                    Log.e("MyListActivity", databaseError.getDetails()+" "+databaseError.getMessage());
+                                                }
+                                            });
 
-                                /* pesanan selesai */
-                                getReference.child("Order_Ambulance").child(id).orderByChild("status").equalTo("3")
-                                        .addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(final DataSnapshot dataSnapshot) {
-                                                if(dataSnapshot.exists()) {
-                                                    orderG = new ArrayList<>();
+                                    /* pesanan selesai */
+                                    getReference.child("Order_Ambulance").child(id).orderByChild("status").equalTo("3")
+                                            .addValueEventListener(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(final DataSnapshot dataSnapshot) {
+                                                    if(dataSnapshot.exists()) {
+                                                        orderG = new ArrayList<>();
 
-                                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                                                        //Mapping data pada DataSnapshot ke dalam objek mahasiswa
-                                                        data_order_get r  = snapshot.getValue(data_order_get.class);
-                                                        //Mengambil Primary Key, digunakan untuk proses Update dan Delete
-                                                        r.setKey(snapshot.getKey());
-                                                        orderG.add(r);
-                                                    }
-                                                    if (orderG.get(0).getKey().equals(Keys)){
-                                                        FirebaseDatabase.getInstance().getReference("Order_Ambulance").child(id).child(Keys).removeValue();
-                                                        FirebaseDatabase.getInstance().getReference("Order_Ambulance_Selesai").
-                                                          child(Keys).setValue(new data_order(orderG.get(0).getPemesan(),
-                                                                orderG.get(0).getDriver(),
-                                                                orderG.get(0).getNo_driver(),
-                                                                orderG.get(0).getNo_pemesan(),
-                                                                orderG.get(0).getLokasi_awal(),
-                                                                orderG.get(0).getLokasi_akhir(),
-                                                                orderG.get(0).getJarak(),
-                                                                orderG.get(0).getStatus()+"||"+orderG.get(0).getKey(),
-                                                                orderG.get(0).getPlat(),
-                                                                orderG.get(0).getInstansi()
-                                                                ));
-                                                        get_order.setVisibility(View.VISIBLE);
-                                                        tunggu.setVisibility(View.GONE);
-                                                        aa.setText("-");
-                                                        ba.setText("-");
-                                                        ca.setText("-");
-                                                        jarak_detail.setText("0 KM");
-                                                        Picasso.get()
-                                                                .load(R.drawable.ambul)
-                                                                .memoryPolicy(MemoryPolicy.NO_CACHE)
-                                                                .networkPolicy(NetworkPolicy.NO_CACHE)
-                                                                .into(foto_driver);
+                                                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                                                            //Mapping data pada DataSnapshot ke dalam objek mahasiswa
+                                                            data_order_get r  = snapshot.getValue(data_order_get.class);
+                                                            //Mengambil Primary Key, digunakan untuk proses Update dan Delete
+                                                            r.setKey(snapshot.getKey());
+                                                            orderG.add(r);
+                                                        }
+                                                        if (orderG.get(0).getKey().equals(Keys)){
+                                                            FirebaseDatabase.getInstance().getReference("Order_Ambulance").child(id).child(Keys).removeValue();
+                                                            FirebaseDatabase.getInstance().getReference("Order_Ambulance_Selesai").
+                                                                    child(Keys).setValue(new data_order(orderG.get(0).getPemesan(),
+                                                                    orderG.get(0).getDriver(),
+                                                                    orderG.get(0).getNo_driver(),
+                                                                    orderG.get(0).getNo_pemesan(),
+                                                                    orderG.get(0).getLokasi_awal(),
+                                                                    orderG.get(0).getLokasi_akhir(),
+                                                                    orderG.get(0).getJarak(),
+                                                                    orderG.get(0).getStatus()+"||"+orderG.get(0).getKey(),
+                                                                    orderG.get(0).getPlat(),
+                                                                    orderG.get(0).getInstansi()
+                                                            ));
+                                                            get_order.setVisibility(View.VISIBLE);
+                                                            tunggu.setVisibility(View.GONE);
+                                                            aa.setText("-");
+                                                            ba.setText("-");
+                                                            ca.setText("-");
+                                                            jarak_detail.setText("0 KM");
+                                                            Picasso.get()
+                                                                    .load(R.drawable.ambul)
+                                                                    .memoryPolicy(MemoryPolicy.NO_CACHE)
+                                                                    .networkPolicy(NetworkPolicy.NO_CACHE)
+                                                                    .into(foto_driver);
 
-                                                        ActionBar menu = getSupportActionBar();
-                                                        menu.setDisplayShowHomeEnabled(true);
-                                                        menu.setDisplayHomeAsUpEnabled(true);
-                                                        Toast.makeText(Ambulance_locate.this, "PANGGILAN TELAH SELESAI..", Toast.LENGTH_LONG).show();
+                                                            ActionBar menu = getSupportActionBar();
+                                                            menu.setDisplayShowHomeEnabled(true);
+                                                            menu.setDisplayHomeAsUpEnabled(true);
+                                                            Toast.makeText(Ambulance_locate.this, "PANGGILAN TELAH SELESAI..", Toast.LENGTH_LONG).show();
+                                                        }
                                                     }
                                                 }
-                                            }
 
-                                            @Override
-                                            public void onCancelled(DatabaseError databaseError) {
-                                                Toast.makeText(getApplicationContext(),"Data Gagal Dimuat", Toast.LENGTH_LONG).show();
-                                                Log.e("MyListActivity", databaseError.getDetails()+" "+databaseError.getMessage());
-                                            }
-                                        });
-                            }
-                        });
-            }
+                                                @Override
+                                                public void onCancelled(DatabaseError databaseError) {
+                                                    Toast.makeText(getApplicationContext(),"Data Gagal Dimuat", Toast.LENGTH_LONG).show();
+                                                    Log.e("MyListActivity", databaseError.getDetails()+" "+databaseError.getMessage());
+                                                }
+                                            });
+                                }
+                            });
+                //    }
+                }
         });
         tunggu.setOnClickListener(new View.OnClickListener() {
             @Override

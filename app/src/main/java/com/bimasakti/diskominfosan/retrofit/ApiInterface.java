@@ -30,6 +30,15 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
 
+
+    @GET("damkar/curl_directions.php")
+    Call<ResponseRoute> request_route(
+            @Query("format") String format,
+            @Query("origin") String origin,
+            @Query("destination") String destination,
+            @Query("key") String api_key
+    );
+
     @GET("getKecamatanWithId.php")
     Call<List<Kecamatan_model>> getKecamatan(
             @Query("key") String keyword);
@@ -173,7 +182,10 @@ public interface ApiInterface {
             @Field("notelepon") String notelepon,
             @Field("lokasi_jemput") String lokasi_jemput,
             @Field("waktu") String waktu,
-            @Field("foto") String foto
+            @Field("foto") String foto,
+            @Field("lat_caller") double lat_caller,
+            @Field("lng_caller") double lng_caller,
+            @Field("tipe_caller") String tipe_caller
     );
 
     @GET("json")

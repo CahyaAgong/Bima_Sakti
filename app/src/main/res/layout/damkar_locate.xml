@@ -27,7 +27,7 @@
                     android:textStyle="bold"
                     android:textColor="#000"
                     android:textSize="20dp"
-                    android:text="E-Damkar"
+                    android:text="Damkar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -250,7 +250,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="Lokasi Pemesan"
+                            android:text="Lokasi Pemanggil"
                             android:textColor="#000"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
@@ -306,6 +306,27 @@
                 android:layout_height="9dp"
                 android:background="#E8E8E8"/>
 
+            <RadioGroup
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/radioButtonOpsi"
+                android:layout_below="@id/locate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rb_Kebakaran"
+                    android:text="Kebakaran"
+                    android:onClick="Checked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/rb_Rescue"
+                    android:text="Rescue"
+                    android:onClick="Checked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+
             <Button
                 android:id="@+id/get_order_am"
                 android:layout_marginEnd="15dp"
@@ -317,14 +338,14 @@
                 android:background="@drawable/bg_btn_primary"
                 android:padding="13dp"
                 android:layout_marginTop="25dp"
-                android:layout_below="@id/locate"
+                android:layout_below="@id/radioButtonOpsi"
                 android:layout_height="45sp"
                 android:layout_width="match_parent"/>
             <Button
                 android:id="@+id/tunggu_ambulan"
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
-                android:text="MENUNGGU DAMKAR"
+                android:text="REFRESH MAP"
                 android:layout_marginBottom="30dp"
                 android:textColor="#fff"
                 android:textStyle="bold"
